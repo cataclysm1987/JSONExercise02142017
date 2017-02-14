@@ -1,26 +1,55 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Javascript Exercises - 2-3-2017</title>
+	<title>JSON Exercises - 2-14-2017</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--JQuery import-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" language="javascript" src="users.json"></script>
     <script type="text/javascript">
-   $(document).ready(function(e) {
-         alert(jsonObject.start.count);
-   });
+        $(document).ready(function () {
+            $('#get-data').click(function () {
+                var showData = $('#show-data');
+
+                $.getJSON('users.json', function (data) {
+                    console.log(data);
+
+                    var users = data.users.map(function (users) {
+                        return 'Student ID: ' +
+                            users.key +
+                            ' Name: ' +
+                            users.name +
+                            '<br>Description: ' +
+                            users.description;
+                    });
+
+                    showData.empty();
+
+                    if (users.length) {
+                        var content = '<li>' + users.join('</li><li>') + '</li>';
+                        var list = $('<ul />').html(content);
+                        showData.append(list);
+                    }
+                });
+
+                showData.text('Loading the JSON file.');
+            });
+        });
     </script>
 </head>
 <body>
 	<div class="bg"></div>
 <div class="jumbotron">
 	<div class="container title-container">
-		<h1>Javascript Exercises</h1>
+		<h1>JSON Exercises</h1>
 		<p class="lead">These exercises were completed February 14th, 2017</p>
 	</div>
 </div>
 <div class="container content-container">
+    <button class="btn-primary" id="get-data">Get JSON data</button>
+    <div id="show-data"></div>
 </div>
 </body>
 </html>
