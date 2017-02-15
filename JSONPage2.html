@@ -35,13 +35,25 @@
     </script>
 </head>
 <body>
-    <div class="bg"></div>
-    <div class="jumbotron">
-        <div class="container title-container">
-            <h1>JSON Exercises</h1>
-            <p class="lead">These exercises were completed February 14th, 2017</p>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">JSON Exercises</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="JSONPage1.html">Page 1</a></li>
+                <li><a href="JSONPage2.html" class="active">Page 2</a></li>
+                <li><a href="JSONPage3.html">Page 3</a></li>
+            </ul>
         </div>
+    </nav>
+<div class="bg"></div>
+<div class="jumbotron">
+    <div class="container title-container">
+        <h1>JSON Exercises</h1>
+        <p class="lead">These exercises were completed February 14th, 2017</p>
     </div>
+</div>
 <div class="container content-container">
     <h1>Search by User ID. Click the button below to find a user in the JSON data that matches a specific user ID value.</h1>
     <input type="text" name="UserId" onfocus="if (this.value == 'Enter User ID Here') { this.value = ''; }" value="Enter User ID Here" id="useridinput">
