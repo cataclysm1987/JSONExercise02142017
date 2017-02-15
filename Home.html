@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Exercises - 2-14-2017</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!--JQuery import-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="users.json"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#get-data').click(function () {
+                var showData = $('#show-data');
+
+                $.getJSON('users.json', function (data) {
+                    console.log(data);
+
+                    var users = data.users.map(function (users) {
+                        return 'Student ID: ' +
+                            users.key +
+                            ' Name: ' +
+                            users.name +
+                            '<br>Description: ' +
+                            users.description;
+                    });
+
+                    showData.empty();
+
+                    if (users.length) {
+                        var content = '<li>' + users.join('</li><li>') + '</li>';
+                        var list = $('<ul />').html(content);
+                        showData.append(list);
+                    }
+                });
+
+                showData.text('Loading the JSON file.');
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">JSON Exercises</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="JSONPage1.html" class="active">Home</a></li>
+                <li><a href="JSONPage2.html">Page 2</a></li>
+                <li><a href="JSONPage3.html">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="bg"></div>
+<div class="jumbotron">
+    <div class="container title-container">
+        <h1>JSON Exercises</h1>
+        <p class="lead">These exercises were completed February 14th, 2017</p>
+    </div>
+</div>
+<div class="container content-container">
+    <h1>This page will display basic information on all users when the button is clicked.</h1>
+    <button class="btn-primary" id="get-data">Get user data</button>
+    <div id="show-data"></div>
+</div>
+</body>
+</html>
