@@ -21,7 +21,7 @@
     },{
       "key": "3",
       "value": "101",
-      "name": "Sherri Hannis",
+      "name": "Sherry Hannis",
       "description": "Just a gal who loves to code! Originally from Iran.",
       "projects": 5,
       "gender": "female",
@@ -35,6 +35,114 @@
       "projects": 4,
       "gender": "male",
       "isactive": false,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "5",
+      "value": "76",
+      "name": "Hamed Abou-Merhi",
+      "description": "Just a guy who loves to code! Restaurant manager at Camida Sabrosa.",
+      "projects": 12,
+      "gender": "male",
+      "isactive": false,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "6",
+      "value": "105",
+      "name": "Alicia Reaves",
+      "description": "Just a gal who loves to code! Bar manager at Camida Sabrosa.",
+      "projects": 3,
+      "gender": "female",
+      "isactive": false,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "7",
+      "value": "111",
+      "name": "Victor Corsi",
+      "description": "Just a guy who loves to code! Developer at Novatio.",
+      "projects": 24,
+      "gender": "male",
+      "isactive": true,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "8",
+      "value": "92",
+      "name": "DeAndre Durr",
+      "description": "Just a guy who loves to code.",
+      "projects": 7,
+      "gender": "male",
+      "isactive": false,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "9",
+      "value": "120",
+      "name": "Mike Wade",
+      "description": "Just a guy who loves to code! ",
+      "projects": 4,
+      "gender": "male",
+      "isactive": false,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "10",
+      "value": "92",
+      "name": "Gregory Chapin",
+      "description": "Just a guy who loves to code! Sous chef at Camida Sabrosa.",
+      "projects": 9,
+      "gender": "male",
+      "isactive": true,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "11",
+      "value": "105",
+      "name": "Jericoh Key",
+      "description": "Just a guy who loves to code! VP of Technology at Novatio.",
+      "projects": 9,
+      "gender": "male",
+      "isactive": true,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "12",
+      "value": "79",
+      "name": "George Temple",
+      "description": "Just a guy who loves to code!",
+      "projects": 5,
+      "gender": "male",
+      "isactive": true,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "13",
+      "value": "122",
+      "name": "Nithu Philip",
+      "description": "Just a gal who loves to code!",
+      "projects": 12,
+      "gender": "female",
+      "isactive": true,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "14",
+      "value": "109",
+      "name": "Kevin Baldwin",
+      "description": "Just a guy who loves to code!",
+      "projects": 8,
+      "gender": "male",
+      "isactive": true,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "15",
+      "value": "99",
+      "name": "Ravon Wright",
+      "description": "Just a guy who loves to code!",
+      "projects": 19,
+      "gender": "male",
+      "isactive": true,
+      "startdate":  "1/17/2017"   
+  }, {
+      "key": "16",
+      "value": "92",
+      "name": "Christopher Johnson",
+      "description": "Just a guy who loves to code!",
+      "projects": 7,
+      "gender": "male",
+      "isactive": true,
       "startdate":  "1/17/2017"   
   }
   ],
