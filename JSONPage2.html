@@ -1,28 +1,52 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>JSON Exercises - 2-14-2017</title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <title>JSON Exercises - 2-14-2017</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!--JQuery import-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" language="javascript" src="users.json"></script>
     <script type="text/javascript">
-   $(document).ready(function(e) {
-         alert(jsonObject.start.count);
-   });
+        $(document).ready(function () {
+            $('#get-data').click(function () {
+                var useridindex = $('#useridinput').val() - 1;
+                var showData = $('#show-data');
+                
+
+                $.getJSON('users.json', function (data) {
+                    if (data.users[useridindex] != null) {
+                        $('#show-data').html('<p> Name: ' + data.users[useridindex].name + '</p>');
+                        $('#show-data').append('<p>Gender : ' + data.users[useridindex].gender + '</p>');
+                        $('#show-data').append('<p> Description: ' + data.users[useridindex].description + '</p>');
+                        $('#show-data').append('<p> Value: ' + data.users[useridindex].value + '</p>');
+                        $('#show-data').append('<p> Start Date: ' + data.users[useridindex].startdate + '</p>');
+                        $('#show-data').append('<p> Projects: ' + data.users[useridindex].projects + '</p>');
+                        $('#show-data').append('<p> Is User Active: ' + data.users[useridindex].isactive + '</p>');
+                    } else {
+                        $('#show-data').html('User was not found.');
+                    }
+                });
+
+                
+            });
+        });
     </script>
 </head>
 <body>
-	<div class="bg"></div>
-<div class="jumbotron">
-	<div class="container title-container">
-		<h1>JSON Exercises</h1>
-		<p class="lead">These exercises were completed February 14th, 2017</p>
-	</div>
-</div>
+    <div class="bg"></div>
+    <div class="jumbotron">
+        <div class="container title-container">
+            <h1>JSON Exercises</h1>
+            <p class="lead">These exercises were completed February 14th, 2017</p>
+        </div>
+    </div>
 <div class="container content-container">
+    <h1>Search by User ID</h1>
+    <input type="text" name="UserId" onfocus="if (this.value == 'Enter User ID Here') { this.value = ''; }" value="Enter User ID Here" id="useridinput">
+    <button class="btn-primary" id="get-data">Get User data</button>
+    <div id="show-data"></div>
 </div>
 </body>
 </html>
