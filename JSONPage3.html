@@ -11,22 +11,25 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#get-data').click(function () {
-                var useridindex = $('#usernameinput').val() - 1;
+                var username = $('#usernameinput').val();
                 var showData = $('#show-data');
 
 
                 $.getJSON('users.json', function (data) {
-                    if (data.users[useridindex] != null) {
-                        $('#show-data').html('<p> Name: ' + data.users[useridindex].name + '</p>');
-                        $('#show-data').append('<p>Gender : ' + data.users[useridindex].gender + '</p>');
-                        $('#show-data').append('<p> Description: ' + data.users[useridindex].description + '</p>');
-                        $('#show-data').append('<p> Value: ' + data.users[useridindex].value + '</p>');
-                        $('#show-data').append('<p> Start Date: ' + data.users[useridindex].startdate + '</p>');
-                        $('#show-data').append('<p> Projects: ' + data.users[useridindex].projects + '</p>');
-                        $('#show-data').append('<p> Is User Active: ' + data.users[useridindex].isactive + '</p>');
+                    for(i=0; i<data.users.length; i++){
+                    if (data.users[i] != null && data.users[i].name == username) {
+                        $('#show-data').html('<p> Name: ' + data.users[i].name + '</p>');
+                        $('#show-data').append('<p>Gender : ' + data.users[i].gender + '</p>');
+                        $('#show-data').append('<p> Description: ' + data.users[i].description + '</p>');
+                        $('#show-data').append('<p> Value: ' + data.users[i].value + '</p>');
+                        $('#show-data').append('<p> Start Date: ' + data.users[i].startdate + '</p>');
+                        $('#show-data').append('<p> Projects: ' + data.users[i].projects + '</p>');
+                        $('#show-data').append('<p> Is User Active: ' + data.users[i].isactive + '</p>');
+                        break;
                     } else {
                         $('#show-data').html('User was not found.');
                     }
+                }
                 });
 
 
@@ -44,7 +47,7 @@
     </div>
     <div class="container content-container">
         <h1>Search by User name. Click the button below to find a user in the JSON data that matches a specific user name value.</h1>
-        <input type="text" name="UserId" onfocus="if (this.value == 'Enter User ID Here') { this.value = ''; }" value="Enter User Name Here" id="usernameinput">
+        <input type="text" name="UserId" onfocus="if (this.value == 'Enter User Name Here') { this.value = ''; }" value="Enter User Name Here" id="usernameinput">
         <button class="btn-primary" id="get-data">Get User data</button>
         <div id="show-data"></div>
     </div>
